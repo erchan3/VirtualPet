@@ -1,13 +1,13 @@
-import processing.serial.*;
-import cc.arduino.*;
-Arduino arduino;
+//import processing.serial.*;
+//import cc.arduino.*;
+//Arduino arduino;
 
 float offset;
 float speed;
 
 void setup()
 {
-  arduino = new Arduino(this, Arduino.list()[0], 57600);
+  //arduino = new Arduino(this, Arduino.list()[0], 57600);
   offset = 0;
   speed = PI/40;
   size(400, 400);
@@ -23,7 +23,8 @@ void draw()
   if (offset > 2 * PI)
     offset = 0;
     
-   speed = map(arduino.analogRead(5), 0, 200, PI/80, PI/10);
+   //speed = map(arduino.analogRead(5), 0, 200, PI/80, PI/10);
+   speed = map(mouseX, 0, width, PI/80, PI/10);
 }
 
 void pet(float x, float y, float offset)
